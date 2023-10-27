@@ -11,8 +11,10 @@
     @isset($tasks)
         @if (count($tasks) > 0)
             @foreach ($tasks as $task)
-                <h1>{{ $task->title }}</h1>
-                <h4>{{ $task->description }}</h4>
+                <a href="{{ route('tasks.show', [$task->id - 1]) }}">
+                    <h1>{{ $task->title }}</h1>
+                    <h4>{{ $task->description }}</h4>
+                </a>
             @endforeach
         @else
             <h1>There are no tasks</h1>

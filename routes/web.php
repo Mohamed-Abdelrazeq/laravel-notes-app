@@ -60,13 +60,13 @@ Route::get('/', function () use ($tasks) {
     "tasks" => $tasks,
     ]
 );
-})->name("index");
+})->name("tasks.index");
 
 Route::get('/{id}', function ($id) use ($tasks) {
     return view('show',[
         "task" => $tasks[$id],
     ]);
-})->name("show");
+})->name("tasks.show");
 
 
 Route::fallback(function () {
