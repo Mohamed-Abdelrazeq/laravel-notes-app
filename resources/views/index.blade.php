@@ -8,8 +8,15 @@
 </head>
 
 <body>
-    @isset($name)
-        <h1>Hello {{ $name }} </h1>
+    @isset($tasks)
+        @if (count($tasks) > 0)
+            @foreach ($tasks as $task)
+                <h1>{{ $task->title }}</h1>
+                <h4>{{ $task->description }}</h4>
+            @endforeach
+        @else
+            <h1>There are no tasks</h1>
+        @endif
     @endisset
 </body>
 
