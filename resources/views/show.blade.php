@@ -33,7 +33,7 @@
             @csrf
             @method('PUT')
             <button class="action-btn" type="submit">Mark as
-                {{ $task->compeleted ? 'not completed' : 'completed' }}</button>
+                {{ $task->completed ? 'not completed' : 'completed' }}</button>
         </form>
 
         <form action="{{ route('tasks.destroy', ['task' => $task]) }}" method="POST">
