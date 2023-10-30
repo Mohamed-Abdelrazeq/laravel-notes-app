@@ -6,7 +6,7 @@
     <style>
         .error-message {
             color: red;
-            font-size: 0, 8rem;
+            font-size: 0.8rem;
         }
     </style>
 @endsection
@@ -18,7 +18,7 @@
             <label for="title">
                 Title
             </label>
-            <input type="text" name="title" id="title" />
+            <input type="text" name="title" id="title" value="{{ old('title') }}" />
             @error('title')
                 <p class="error-message">{{ $message }}</p>
             @enderror
@@ -28,7 +28,7 @@
             <label for="description" id="description">
                 Description
             </label>
-            <textarea name="description" id="description"></textarea>
+            <textarea name="description" id="description">{{ old('description') }}</textarea>
             @error('description')
                 <p class="error-message">{{ $message }}</p>
             @enderror
@@ -36,9 +36,9 @@
 
         <div>
             <label for="long_description" id="long_description" rows="5">
-                Description
+                long_description
             </label>
-            <textarea name="long_description" id="long_description" rows="15"></textarea>
+            <textarea name="long_description" id="long_description" rows="15">{{ old('long_description') }}</textarea>
         </div>
         @error('long_description')
             <p class="error-message">{{ $message }}</p>
