@@ -11,8 +11,8 @@ Route::get('/', function () {
 
 Route::get('/tasks', function () {
     $tasks = Task::latest()
-                    ->where('compeleted',true)
-                    ->get();
+                    ->paginate();
+
     return view('index',[
     "tasks" => $tasks,
     ]

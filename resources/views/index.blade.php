@@ -20,10 +20,10 @@
             <h1>There are no tasks</h1>
         @endif
 
-        {{-- @if ($tasks->count())
+        @if ($tasks->count())
             <nav>
                 {{ $tasks->links() }}
             </nav>
-        @endif --}}
+        @endif
     @endisset
 @endsection
