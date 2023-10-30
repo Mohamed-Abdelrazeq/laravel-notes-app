@@ -13,6 +13,13 @@
     <p>{{ $task->created_at }}</p>
     <p>{{ $task->updated_at }}</p>
 
+    <p>
+        @if ($task->completed)
+            <span>Completed</span>
+        @else
+            <span>Not completed</span>
+        @endif
+
     <div>
         <a href="{{ route('tasks.edit', ['task' => $task]) }}">Edit</a>
     </div>
