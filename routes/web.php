@@ -19,6 +19,10 @@ Route::get('/tasks', function () {
 );
 })->name("tasks.index");
 
+
+
+
+
 Route::view('/tasks/create', 'create')->name('tasks.create');
 
 Route::get('/tasks/{task}/edit', function (Task $task) {
@@ -31,8 +35,12 @@ Route::get('tasks/{task}', function (Task $task) {
     return view('show',[
         "task" => $task,
     ]);
-})->name("tasks.show");
- 
+})->name("tasks.show"); 
+
+
+
+
+
 Route::post('/tasks', function (TaskRequest $request) {
     $task = Task::create($request->validated());
 
@@ -56,6 +64,10 @@ Route::delete('/tasks/{task}', function (Task $task) {
             ->route("tasks.index")
             ->with('success', 'Task Deleted successfully.');
 })->name("tasks.destroy");
+
+
+
+
 
 Route::fallback(function () {
     return "404";
