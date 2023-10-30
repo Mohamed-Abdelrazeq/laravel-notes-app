@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+    <div>
+        <a href="{{ route('tasks.create') }}">Add Task!</a>
+    </div>
     @isset($tasks)
         @if (count($tasks) > 0)
             @foreach ($tasks as $task)
@@ -16,5 +19,11 @@
         @else
             <h1>There are no tasks</h1>
         @endif
+
+        {{-- @if ($tasks->count())
+            <nav>
+                {{ $tasks->links() }}
+            </nav>
+        @endif --}}
     @endisset
 @endsection
