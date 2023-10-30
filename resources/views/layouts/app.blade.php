@@ -35,12 +35,13 @@
 </head>
 
 <body class="container mx-auto mt-10 mb-10 max-w-lg">
-    @if (session()->has('success'))
-        <div>
-            {{ session()->get('success') }}
-        </div>
+    @if(session()->has('success')) 
+    <div class="mb-10 rounded border border-green-400 bg-green-100 px-4 py-3 text-xl text-green-700"
+        role="alert">
+        <strong class="font-bold">Success!</strong>
+        <div>{{ session('success') }}</div>
     @endif
-
+    </div>
     <h1 class="text-6xl font-bold mb-4 text-gray-700">@yield('title')</h1>
     <div>
         @yield('content')
